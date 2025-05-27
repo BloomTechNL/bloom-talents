@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import type { JSX } from "react";
-import { SimpleSection, TopSection } from "./sections";
+import { ImageBannerSection, SimpleSection, TopSection } from "./sections";
 
 const theme = createTheme({
   palette: {
@@ -28,6 +28,7 @@ function App(): JSX.Element {
           title="Samen gaan we voor groei, succes en impact."
           message="Wij verbinden de top 5% technisch toptalent met vooraanstaande organisaties. Ons exclusieve traineeship ontwikkelt talenten tot onmisbare steunpilaren die het verschil maken."
         />
+        <ImageBannerSection title="“Birds of a feather flock together”" />
       </Box>
     </ThemeProvider>
   );

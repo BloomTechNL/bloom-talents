@@ -1,4 +1,5 @@
+import { ImageBannerSection } from "./ImageBannerSection";
 import { SimpleSection } from "./SimpleSection";
 import { TopSection } from "./TopSection";
 
-export { SimpleSection, TopSection };
+export { ImageBannerSection, SimpleSection, TopSection };
