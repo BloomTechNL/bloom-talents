@@ -1,6 +1,9 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import type { JSX } from "react";
+import feathersPNG from "./assets/feathers.png";
+import { Header } from "./components";
 
 const theme = createTheme({
   palette: {
@@ -11,31 +14,28 @@ const theme = createTheme({
 });
 
 function App(): JSX.Element {
-  const handleClick = (): void => {
-    console.log("Button clicked!");
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Box sx={{ my: 4 }}>
-          <Typography variant="h2" component="h1" gutterBottom>
-            My Static Site
-          </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
-            Built with React, TypeScript, Material-UI, and Vite
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            onClick={handleClick}
-            sx={{ mt: 2 }}
-          >
-            Get Started
-          </Button>
+      <Box
+        sx={{ bgcolor: "blue", flex: 1, minHeight: "100vh", width: "100vw" }}
+      >
+        <Box
+          sx={{
+            bgcolor: "blue",
+            flex: 1,
+            width: "100vw",
+            minHeight: "40vh",
+            maxHeight: "40vh",
+            backgroundImage: `url(${feathersPNG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Header />
         </Box>
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 }
