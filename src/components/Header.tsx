@@ -52,7 +52,7 @@ const Header: React.FC = () => {
               key={title + index}
               href={url}
               underline="none"
-              sx={{ color: "white" }}
+              sx={{ color: "text.secondary" }}
             >
               {title}
             </Link>

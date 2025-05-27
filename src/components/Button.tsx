@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
         },
       }}
     >
-      <Typography sx={{ textTransform: "none" }} color="white">
+      <Typography sx={{ textTransform: "none" }} color="text.secondary">
         {title}
       </Typography>
     </LocalButton>
