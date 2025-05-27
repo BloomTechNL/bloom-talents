@@ -2,7 +2,12 @@ import { Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import type { JSX } from "react";
-import { ImageBannerSection, SimpleSection, TopSection } from "./sections";
+import {
+  ImageBannerSection,
+  SimpleSection,
+  TilesSection,
+  TopSection,
+} from "./sections";
 
 const theme = createTheme({
   palette: {
@@ -29,6 +34,30 @@ function App(): JSX.Element {
           message="Wij verbinden de top 5% technisch toptalent met vooraanstaande organisaties. Ons exclusieve traineeship ontwikkelt talenten tot onmisbare steunpilaren die het verschil maken."
         />
         <ImageBannerSection title="“Birds of a feather flock together”" />
+        <TilesSection
+          content={[
+            {
+              message:
+                "Bloom Talents is een nieuw, uniek, laagdrempelig en exclusief traineeship voor de top van technisch Nederland op hard- en softskills.",
+            },
+            {
+              message:
+                "Wij selecteren uitsluitend talenten met een Master Informatica, Wiskunde, AI of Natuurkunde van de TU Delft, TU Eindhoven en Universiteit Twente.",
+            },
+            {
+              message:
+                "Alle talenten worden gematcht aan organisaties die naadloos passen en waar zij zich voor de lange(re) termijn aan willen committeren.",
+            },
+            {
+              message:
+                "Tegelijkertijd volgen de talenten het exclusieve Bloom traineeship van een jaar met 30 masterclasses én een stuk maatwerk.",
+            },
+            {
+              message:
+                "Hierdoor zijn onze opdrachtgevers verzekerd van technisch toptalent dat zich razendsnel ontwikkelt tot een onmisbare steunpilaar.",
+            },
+          ]}
+        />
       </Box>
     </ThemeProvider>
   );
