@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     <Box
       sx={{
         pt: 4,
-        px: { xs: 8, lg: 16 },
+        px: { xs: 4, sm: 8, lg: 16 },
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
