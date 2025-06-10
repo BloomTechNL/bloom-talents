@@ -5,8 +5,10 @@ import type { JSX } from "react";
 import {
   ImageBannerSection,
   SimpleSection,
+  TeamSection,
   TilesSection,
   TopSection,
+  type Person,
 } from "./sections";
 
 const theme = createTheme({
@@ -20,6 +22,12 @@ const theme = createTheme({
     },
   },
 });
+
+const persons: Person[] = [
+  { name: "Laurens", role: "CCI" },
+  { name: "Laurens", role: "CCI" },
+  { name: "Laurens", role: "CCI" },
+];
 
 function App(): JSX.Element {
   return (
@@ -58,6 +66,7 @@ function App(): JSX.Element {
             },
           ]}
         />
+        <TeamSection title="Meet the team" persons={persons} />
       </Box>
     </ThemeProvider>
   );
