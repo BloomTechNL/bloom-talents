@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import bloomSVG from "../assets/bloom.svg";
 import feathersPNG from "../assets/feathers.png";
-import { Button, Header } from "../components";
+import { Header } from "../components";
 
 const TopSection: React.FC = () => {
   return (
@@ -50,7 +50,7 @@ const TopSection: React.FC = () => {
         <Typography sx={{ mb: 6 }} color="text.secondary">
           Software - Data - Cloud - loT
         </Typography>
-        <Button title="Start" url="adssa" variant="secondary" />
+        {/* <Button title="Start" url="adssa" variant="secondary" /> */}
       </Box>
     </Box>
   );

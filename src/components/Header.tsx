@@ -9,10 +9,11 @@ interface Item {
 }
 
 const items: Item[] = [
-  { title: "For Talents", url: "www.google.nl", solid: false },
-  { title: "For Client", url: "www.google.nl", solid: false },
-  { title: "Jobs", url: "www.google.nl", solid: false },
-  { title: "About us", url: "www.google.nl", solid: false },
+  { title: "Over ons", url: "www.google.nl", solid: false },
+  { title: "Team", url: "www.google.nl", solid: false },
+  { title: "Trainees", url: "www.google.nl", solid: false },
+  { title: "Partners", url: "www.google.nl", solid: false },
+  { title: "Trainers", url: "www.google.nl", solid: false },
   { title: "Contact", url: "https://google.nl", solid: true },
 ];
 
