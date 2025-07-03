@@ -54,17 +54,6 @@ const TeamSection: React.FC<TilesSectionProps> = ({ title, persons }) => {
                   height: "128px",
                   objectFit: "cover",
                   transition: "opacity 0.3s ease-in-out",
-                  "&:hover": {
-                    animation: "spin 1s linear infinite",
-                  },
-                  "@keyframes spin": {
-                    "0%": {
-                      transform: "rotate(0deg)",
-                    },
-                    "100%": {
-                      transform: "rotate(360deg)",
-                    },
-                  },
                 }}
               />
               <Typography

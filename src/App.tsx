@@ -45,22 +45,27 @@ function App(): JSX.Element {
         <TilesSection
           content={[
             {
+              iconName: "traineeship",
               message:
                 "Bloom Talents is een nieuw, uniek, laagdrempelig en exclusief traineeship voor de top van technisch Nederland op hard- en softskills.",
             },
             {
+              iconName: "selection",
               message:
                 "Wij selecteren uitsluitend talenten met een Master Informatica, Wiskunde, AI of Natuurkunde van de TU Delft, TU Eindhoven en Universiteit Twente.",
             },
             {
+              iconName: "pieces",
               message:
                 "Alle talenten worden gematcht aan organisaties die naadloos passen en waar zij zich voor de lange(re) termijn aan willen committeren.",
             },
             {
+              iconName: "timeline",
               message:
                 "Tegelijkertijd volgen de talenten het exclusieve Bloom traineeship van een jaar met 30 masterclasses én een stuk maatwerk.",
             },
             {
+              iconName: "inshurance",
               message:
                 "Hierdoor zijn onze opdrachtgevers verzekerd van technisch toptalent dat zich razendsnel ontwikkelt tot een onmisbare steunpilaar.",
             },

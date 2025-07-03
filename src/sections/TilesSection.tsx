@@ -1,12 +1,37 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { Button } from "../components";
 
+import {
+  inshuranceSVG,
+  piecesSVG,
+  selectionSVG,
+  timelineSVG,
+  traineeshipSVG,
+  type SVGName,
+} from "../icons";
+
 interface Content {
   message: string;
+  iconName: SVGName;
 }
 
 interface TilesSectionProps {
   content: [Content, Content, Content, Content, Content];
+}
+
+function getSVG(name: SVGName) {
+  switch (name) {
+    case "inshurance":
+      return inshuranceSVG;
+    case "selection":
+      return selectionSVG;
+    case "pieces":
+      return piecesSVG;
+    case "timeline":
+      return timelineSVG;
+    case "traineeship":
+      return traineeshipSVG;
+  }
 }
 
 const TilesSection: React.FC<TilesSectionProps> = ({ content }) => {
@@ -30,7 +55,7 @@ const TilesSection: React.FC<TilesSectionProps> = ({ content }) => {
           },
         }}
       >
-        {content.map(({ message }) => (
+        {content.map(({ message, iconName }) => (
           <Grid size={{ xs: 12, md: 6, lg: 4 }}>
             <Box
               sx={{
@@ -41,6 +66,24 @@ const TilesSection: React.FC<TilesSectionProps> = ({ content }) => {
                 borderRadius: 4,
               }}
             >
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  paddingBottom: 2,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={getSVG(iconName)}
+                  sx={{
+                    height: "64px",
+                  }}
+                />
+              </Box>
+
               <Typography textAlign="center" sx={{ mb: 3 }}>
                 {message}
               </Typography>
