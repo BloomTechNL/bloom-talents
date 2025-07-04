@@ -74,7 +74,7 @@ const TeamSection: React.FC<TilesSectionProps> = ({ title, persons }) => {
             </Box>
           ))}
         </Box>
-        <Box>
+        <Box sx={{ pt: 4, bgcolor: "red" }}>
           <Button title="Contact" url="#" variant="white" />
         </Box>
       </Box>

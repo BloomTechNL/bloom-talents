@@ -72,7 +72,7 @@ function App(): JSX.Element {
             },
           ]}
         />
-        <TeamSection title="Meet the team" persons={persons} />
+        <TeamSection title="Ontmoet het team" persons={persons} />
         <Footer />
       </Box>
     </ThemeProvider>

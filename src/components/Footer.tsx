@@ -2,12 +2,10 @@ import { Box, Grid, Link, Typography } from "@mui/material";
 
 interface Item {
   title: string;
-  subItems: SubItem[];
-}
-
-interface SubItem {
-  title: string;
-  url?: string;
+  subItems: {
+    title: string;
+    url?: string;
+  }[];
 }
 
 const items: Item[] = [
@@ -15,7 +13,7 @@ const items: Item[] = [
     title: "Pagina's",
     subItems: [
       {
-        title: "Dashboard",
+        title: "Over ons",
         url: "www.google.nl",
       },
       {

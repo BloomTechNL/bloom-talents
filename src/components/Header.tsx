@@ -10,10 +10,6 @@ interface Item {
 
 const items: Item[] = [
   { title: "Over ons", url: "www.google.nl", solid: false },
-  { title: "Team", url: "www.google.nl", solid: false },
-  { title: "Trainees", url: "www.google.nl", solid: false },
-  { title: "Partners", url: "www.google.nl", solid: false },
-  { title: "Trainers", url: "www.google.nl", solid: false },
   { title: "Contact", url: "https://google.nl", solid: true },
 ];
 
