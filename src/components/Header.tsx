@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             >
               {title}
             </Link>
-          )
+          ),
         )}
       </Box>
     </Box>

@@ -16,20 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          cache: 'pnpm'
+          node-version: "22"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
-      
+
       - name: Build
         run: pnpm run build
 

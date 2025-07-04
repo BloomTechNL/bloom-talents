@@ -43,11 +43,11 @@ const Footer: React.FC = () => {
   return (
     <Box
       sx={{
-        pt: 4,
+        pt: 6,
         px: 2,
         display: "flex",
         flexDirection: "column",
-        justifyContent: { xs: "left", md: "center" },
+        alignItems: { xs: "left", md: "center" },
         bgcolor: "white",
       }}
     >
@@ -56,13 +56,14 @@ const Footer: React.FC = () => {
         spacing={2}
         sx={{
           display: "flex",
-          width: "100%",
+          width: "80vw",
+          bgcolor: "white",
         }}
       >
         {items.map(({ title, subItems }, index) => (
           <Grid
             key={title + index}
-            size={{ xs: 12, sm: 6, md: 4 }}
+            size={{ xs: 12, sm: 6, lg: 4 }}
             sx={{
               justifyContent: {
                 xs: "left",
@@ -70,13 +71,18 @@ const Footer: React.FC = () => {
               },
             }}
           >
-            <Typography variant="h6" fontWeight="bold" textAlign="center">
+            <Typography
+              variant="h6"
+              fontWeight="bold"
+              textAlign="left"
+              sx={{ pb: 2 }}
+            >
               {title}
             </Typography>
             {subItems.map(({ title, url }, index) => (
               <Box
                 key={title + index}
-                sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+                sx={{ display: "flex", flexDirection: "column", pb: 0.5 }}
               >
                 {url ? (
                   <Link
@@ -85,12 +91,12 @@ const Footer: React.FC = () => {
                     underline="none"
                     sx={{ color: "text.primary" }}
                   >
-                    <Typography variant="body1" textAlign="center">
+                    <Typography variant="body1" textAlign="left">
                       {title}
                     </Typography>
                   </Link>
                 ) : (
-                  <Typography variant="body1" textAlign="center">
+                  <Typography variant="body1" textAlign="left">
                     {title}
                   </Typography>
                 )}
@@ -99,9 +105,19 @@ const Footer: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-      <Typography variant="body1" textAlign="center" sx={{ pt: 2, pb: 1 }}>
-        Copyright 2025 Bloom Group - All Rights Reserved
-      </Typography>
+      <Box
+        sx={{
+          width: "80vw",
+        }}
+      >
+        <Typography
+          variant="body1"
+          textAlign="left"
+          sx={{ pt: 4, pb: 2, color: "secondary.main" }}
+        >
+          Copyright 2025 Bloom Group - All Rights Reserved
+        </Typography>
+      </Box>
     </Box>
   );
 };
