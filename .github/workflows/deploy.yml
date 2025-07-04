@@ -3,43 +3,63 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - main # Trigger on pushes to the main branch
+  pull_request: # Also trigger on pull requests for preview builds (optional, but good practice)
+
+# Sets permissions for the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read # Allows checking out the repository
+  pages: write # Allows deploying to GitHub Pages
+  id-token: write # Required for OIDC authentication with GitHub Pages
+
+# Allow only one concurrent deployment, skipping runs queued between the start and latest queued.
+# However, we only want to cancel workflow runs for the latest pushed commit.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  # Job to build the project and upload the artifact
+  build:
+    runs-on: ubuntu-22.04 # Specify the runner environment
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          submodules: true # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: true # Fetch submodules if your project uses them (e.g., Hugo themes)
+          fetch-depth: 0 # Fetch all history for Git-related features (e.g., Hugo .GitInfo)
 
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8 # Specify pnpm version
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "pnpm"
+          node-version: "22" # Specify Node.js version
+          cache: "pnpm" # Enable caching for pnpm dependencies
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile # Install project dependencies
 
-      - name: Build
-        run: pnpm run build
+      - name: Build project
+        run: pnpm run build # Run your project's build command (e.g., Vite build)
 
-      - name: Generate dummy file
-        run: touch ./dist/.dummy
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+      - name: Upload production-ready assets
+        uses: actions/upload-pages-artifact@v3 # Uploads the build output as an artifact
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          keep_files: true
+          path: ./dist # The directory containing your built static files
+
+  # Job to deploy the uploaded artifact to GitHub Pages
+  deploy:
+    environment:
+      name: github-pages # Specifies the deployment environment (creates if not exists)
+      url: ${{ steps.deployment.outputs.page_url }} # Sets the URL of the deployed page
+    runs-on: ubuntu-22.04 # Specify the runner environment
+    needs: build # This job depends on the 'build' job completing successfully
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment # Assigns an ID to this step for accessing its outputs
+        uses: actions/deploy-pages@v4 # The official GitHub Pages deployment action
