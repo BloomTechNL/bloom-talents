@@ -19,14 +19,16 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Install dependencies
-        run: pnpm install
+      - uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
       
       - name: Build
         run: pnpm run build
