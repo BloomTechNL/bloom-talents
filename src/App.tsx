@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import type { JSX } from "react";
+import { Footer } from "./components";
 import {
   ImageBannerSection,
   SimpleSection,
@@ -72,6 +73,7 @@ function App(): JSX.Element {
           ]}
         />
         <TeamSection title="Meet the team" persons={persons} />
+        <Footer />
       </Box>
     </ThemeProvider>
   );

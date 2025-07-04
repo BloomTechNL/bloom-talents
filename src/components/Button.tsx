@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
         return "white";
       case "secondary":
         return "linear-gradient(45deg, #7800A6 0%, #180068 100%)";
-      default:
+      case "primary":
         return "linear-gradient(45deg, #009EC9 0%, #18009A 100%)";
     }
   };
@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
         return "white";
       case "secondary":
         return "linear-gradient(45deg, #5c0080 0%, #120050 100%)";
-      default:
+      case "primary":
         return "linear-gradient(45deg, #007ba3 0%, #140078 100%)";
     }
   };
@@ -33,7 +33,9 @@ const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
     switch (variant) {
       case "white":
         return "text.primary";
-      default:
+      case "secondary":
+        return "text.secondary";
+      case "primary":
         return "text.secondary";
     }
   };
