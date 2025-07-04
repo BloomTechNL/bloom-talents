@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       >
         {items.map(({ title, url, solid }, index) =>
           solid ? (
-            <Button title={title} url={url} />
+            <Button key={index + title} title={title} url={url} />
           ) : (
             <Link
               key={title + index}

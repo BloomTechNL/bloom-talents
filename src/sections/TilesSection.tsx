@@ -55,8 +55,8 @@ const TilesSection: React.FC<TilesSectionProps> = ({ content }) => {
           },
         }}
       >
-        {content.map(({ message, iconName }) => (
-          <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+        {content.map(({ message, iconName }, index) => (
+          <Grid key={message + index} size={{ xs: 12, md: 6, lg: 4 }}>
             <Box
               sx={{
                 bgcolor: "#F3F2F9",

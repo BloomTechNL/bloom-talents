@@ -73,8 +73,11 @@ const Footer: React.FC = () => {
             <Typography variant="h6" fontWeight="bold" textAlign="center">
               {title}
             </Typography>
-            {subItems.map(({ title, url }) => (
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {subItems.map(({ title, url }, index) => (
+              <Box
+                key={title + index}
+                sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+              >
                 {url ? (
                   <Link
                     key={title + index}

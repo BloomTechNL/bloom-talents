@@ -1,6 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import type { JSX } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AboutUsPage } from "./pages";
 
 const theme = createTheme({
@@ -19,7 +20,12 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AboutUsPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AboutUsPage />} />
+          <Route path="/contact" element={<AboutUsPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

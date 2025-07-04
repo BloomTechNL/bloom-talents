@@ -44,8 +44,11 @@ const TeamSection: React.FC<TilesSectionProps> = ({ title, persons }) => {
           {title}
         </Typography>
         <Box sx={{ display: "flex", gap: 3 }}>
-          {persons.map(({ name, role }) => (
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
+          {persons.map(({ name, role }, index) => (
+            <Box
+              key={name + index}
+              sx={{ display: "flex", flexDirection: "column" }}
+            >
               <Box
                 component="img"
                 src={personPNG}
