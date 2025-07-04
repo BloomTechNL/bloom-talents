@@ -48,7 +48,7 @@ function AboutUsPage(): JSX.Element {
               "Tegelijkertijd volgen de talenten het exclusieve Bloom traineeship van een jaar met 30 masterclasses én een stuk maatwerk.",
           },
           {
-            iconName: "inshurance",
+            iconName: "insurance",
             message:
               "Hierdoor zijn onze opdrachtgevers verzekerd van technisch toptalent dat zich razendsnel ontwikkelt tot een onmisbare steunpilaar.",
           },

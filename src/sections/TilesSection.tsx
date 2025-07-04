@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { Button } from "../components";
 
 import {
-  inshuranceSVG,
+  insuranceSVG,
   piecesSVG,
   selectionSVG,
   timelineSVG,
@@ -21,8 +21,8 @@ interface TilesSectionProps {
 
 function getSVG(name: SVGName) {
   switch (name) {
-    case "inshurance":
-      return inshuranceSVG;
+    case "insurance":
+      return insuranceSVG;
     case "selection":
       return selectionSVG;
     case "pieces":
