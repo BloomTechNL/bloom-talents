@@ -8,7 +8,7 @@ import {
   timelineSVG,
   traineeshipSVG,
   type SVGName,
-} from "../icons";
+} from "../assets/icons";
 
 interface Content {
   message: string;
