@@ -23,7 +23,7 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter >
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<AboutUsPage />} />
           <Route path="/contact" element={<AboutUsPage />} />
