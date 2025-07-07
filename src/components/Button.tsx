@@ -1,4 +1,5 @@
 import { Button as LocalButton, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonProps {
   title: string;
@@ -6,7 +7,9 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "white";
 }
 
-const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
+const Button: React.FC<ButtonProps> = ({ title, variant = "primary", url }) => {
+  const navigate = useNavigate();
+
   const getBackground = () => {
     switch (variant) {
       case "white":
@@ -42,6 +45,13 @@ const Button: React.FC<ButtonProps> = ({ title, variant = "primary" }) => {
 
   return (
     <LocalButton
+      onClick={
+        url
+          ? () => {
+              navigate(url);
+            }
+          : undefined
+      }
       sx={{
         background: getBackground(),
         borderRadius: 25,

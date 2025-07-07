@@ -9,15 +9,15 @@ interface Item {
 }
 
 const items: Item[] = [
-  { title: "Over ons", url: "www.google.nl", solid: false },
-  { title: "Contact", url: "https://google.nl", solid: true },
+  { title: "Over ons", url: "/", solid: false },
+  { title: "Contact", url: "/contact", solid: true },
 ];
 
 const Header: React.FC = () => {
   return (
     <Box
       sx={{
-        pt: 4,
+        py: 3,
         px: { xs: 4, sm: 8, lg: 16 },
         display: "flex",
         flexDirection: "row",
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             >
               {title}
             </Link>
-          ),
+          )
         )}
       </Box>
     </Box>

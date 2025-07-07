@@ -2,7 +2,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import type { JSX } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AboutUsPage } from "./pages";
+import { AboutUsPage, ContactPage } from "./pages";
 
 const theme = createTheme({
   palette: {
@@ -25,8 +25,9 @@ function App(): JSX.Element {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
+          <Route path="*" element={<AboutUsPage />} />
           <Route path="/" element={<AboutUsPage />} />
-          <Route path="/contact" element={<AboutUsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

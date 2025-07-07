@@ -14,10 +14,11 @@ const items: Item[] = [
     subItems: [
       {
         title: "Over ons",
-        url: "www.google.nl",
+        url: "/",
       },
       {
         title: "Contact",
+        url: "/contact",
       },
     ],
   },

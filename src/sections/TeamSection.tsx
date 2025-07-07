@@ -17,19 +17,41 @@ const TeamSection: React.FC<TilesSectionProps> = ({ title, persons }) => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(45deg, #007ba3 0%, #140078 100%)",
+        position: "relative",
+        overflow: "hidden",
         py: { xs: 2, md: 8 },
         px: 2,
         display: "flex",
         justifyContent: "center",
-        backgroundImage: `url(${bloomPNG})`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Gradient background layer */}
       <Box
         sx={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(45deg, #2a91b5 0%, #4a2f96 100%)",
+          zIndex: 0,
+        }}
+      />
+      {/* Image overlay layer */}
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${bloomPNG})`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.3,
+          zIndex: 1,
+        }}
+      />
+      {/* Content */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

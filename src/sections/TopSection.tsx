@@ -3,19 +3,27 @@ import bloomSVG from "../assets/bloom.svg";
 import feathersPNG from "../assets/feathers.png";
 import { Header } from "../components";
 
-const TopSection: React.FC = () => {
+interface TopSectionProps {
+  showLogo?: boolean;
+  title?: [string, string];
+  message?: string;
+}
+
+const TopSection: React.FC<TopSectionProps> = ({
+  showLogo,
+  title,
+  message,
+}) => {
   return (
     <Box
       sx={{
-        bgcolor: "blue",
         flex: 1,
         display: "flex",
         flexDirection: "column",
         width: "100vw",
-        minHeight: "40vh",
         backgroundImage: `url(${feathersPNG})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -28,29 +36,36 @@ const TopSection: React.FC = () => {
           alignSelf: "center",
           justifyContent: "center",
           flexDirection: "column",
-          py: 12,
           maxWidth: 440,
         }}
       >
-        <Box
-          component="img"
-          src={bloomSVG}
-          alt="Logo"
-          sx={{
-            height: 56,
-            mb: 4,
-          }}
-        />
-        <Typography variant="h4" color="text.secondary">
-          Exclusief, karaktervol
-        </Typography>
-        <Typography variant="h4" color="text.secondary" sx={{ mb: 1 }}>
-          Tech-Traineeship
-        </Typography>
-        <Typography sx={{ mb: 6 }} color="text.secondary">
-          Software - Data - Cloud - loT
-        </Typography>
-        {/* <Button title="Start" url="adssa" variant="secondary" /> */}
+        {showLogo && (
+          <Box
+            component="img"
+            src={bloomSVG}
+            alt="Logo"
+            sx={{
+              height: 56,
+              mb: 3,
+              mt: 6,
+            }}
+          />
+        )}
+        {title && (
+          <>
+            <Typography variant="h4" color="text.secondary">
+              {title[0]}
+            </Typography>
+            <Typography variant="h4" color="text.secondary" sx={{ mb: 1 }}>
+              {title[1]}
+            </Typography>
+          </>
+        )}
+        {!!message && (
+          <Typography sx={{ mb: 6 }} color="text.secondary">
+            {message}
+          </Typography>
+        )}
       </Box>
     </Box>
   );
