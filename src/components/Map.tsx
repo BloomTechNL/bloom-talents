@@ -6,9 +6,17 @@ const center = { lng: 4.917325471254367, lat: 52.34491172835247 };
 function Map() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey:
+      process.env.VITE_GOOGLE_MAPS_API_KEY ??
+      (import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string),
     libraries: ["marker"],
   });
+
+  console.info(
+    "asdad",
+    process.env.VITE_GOOGLE_MAPS_API_KEY ??
+      (import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string)
+  );
 
   const onLoad = useCallback((map: google.maps.Map) => {
     // Create a new AdvancedMarkerElement
@@ -34,7 +42,8 @@ function Map() {
         streetViewControl: false,
         mapTypeControl: false,
         fullscreenControl: false,
-        mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
+        mapId:
+          process.env.VITE_GOOGLE_MAP_ID ?? import.meta.env.VITE_GOOGLE_MAP_ID,
       }}
     />
   ) : null;
