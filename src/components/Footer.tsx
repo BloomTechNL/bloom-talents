@@ -24,18 +24,23 @@ const items: Item[] = [
   },
   {
     title: "Neem contact op",
-    subItems: [
-      { title: "Symphony Towers," },
-      { title: "Gustav Mahlerplein 29-35," },
-      { title: "1082 MS, Amsterdam" },
-    ],
+    subItems: [{ title: "Rembrandtplein 1," }, { title: "1082 MS, Amsterdam" }],
   },
   {
     title: "Links",
     subItems: [
-      { title: "Privacyverklaring" },
-      { title: "Cookiebeleid" },
-      { title: "Algemene voorwaarden" },
+      {
+        title: "Privacyverklaring",
+        url: "https://www.bloom-group.nl/wp-content/uploads/2023/12/privacy-statement.pdf",
+      },
+      {
+        title: "Cookiebeleid",
+        url: "https://www.bloom-group.nl/wp-content/uploads/2023/12/cookie-policy.pdf",
+      },
+      {
+        title: "Algemene voorwaarden",
+        url: "https://www.bloom-group.nl/wp-content/uploads/2024/07/Bloom-Group-general-conditions-2024-NL.pdf",
+      },
     ],
   },
 ];
